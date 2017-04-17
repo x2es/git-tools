@@ -1,0 +1,7 @@
+#!/bin/bash
+
+MODIFIED_SPECS=`git status --porcelain -u | grep '[M\?] spec' | awk '{ print $2 }'`
+
+echo Root: `pwd`
+echo Invoking $MODIFIED_SPECS
+bundle exec rspec $MODIFIED_SPECS --format documentation $@

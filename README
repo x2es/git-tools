@@ -1,0 +1,16 @@
+
+Git Tools
+=========
+
+## Install
+
+Add `bin/` to PATH.
+
+## Tools
+
+### Rails: run rspec for modified specs
+
+Invokes `bundle exec rspec <modified specs>`
+
+Assuming all specs placed in `spec/`.
+
