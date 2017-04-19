@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MODIFIED_SPECS=`git status --porcelain -u | grep '[M\?] spec' | awk '{ print $2 }'`
+MODIFIED_SPECS=`git status --porcelain -u | grep '[M\?] spec.*_spec.rb$' | awk '{ print $2 }'`
 
 echo Root: `pwd`
 echo Invoking $MODIFIED_SPECS

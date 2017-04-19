@@ -12,5 +12,5 @@ Add `bin/` to PATH.
 
 Invokes `bundle exec rspec <modified specs>`
 
-Assuming all specs placed in `spec/`.
+Assuming all specs match `spec/**/*_spec.rb`.
 
