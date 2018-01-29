@@ -34,3 +34,15 @@ end
 ```bash
 $ rspec-modified --tag only
 ```
+
+### Git difftool for all modified
+
+```bash
+$ git-diffadd
+```
+
+ - Invokes `git difftool` for each modified file in current dir.
+ - Then asks about adding it to commit [Y/n]
+ - Goes to next file
+
+NOTE: very primitive, works well only when no added to commit files
