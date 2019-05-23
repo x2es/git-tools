@@ -1,0 +1,1 @@
+ESLINT_BIN=client/node_modules/.bin/eslint

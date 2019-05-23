@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#
+# For custom eslint binary path create `.eslint-modified` file in root of project dir
+# file is bash module which should define `ESLINT_BIN` variable
+# see .eslint-modified.sample
+#
+
+MODIFIED_JS=`git status --porcelain -u | grep '[M\?] .*\.js$' | awk '{ print $2 }'`
+
+PROJECT_ROOT=`pwd`
+CONFIG_RC=$PROJECT_ROOT/.eslint-modified
+
+echo Root: $PROJECT_ROOT
+
+[[ -e $CONFIG_RC ]] && . $CONFIG_RC
+[[ -z "$ESLINT_BIN" ]] && ESLINT_BIN=node_modules/.bin/eslint
+
+echo Invoking $ESLINT_BIN $MODIFIED_JS
+
+$ESLINT_BIN $MODIFIED_JS $@
